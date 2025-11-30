@@ -118,7 +118,7 @@
             text-align: center;
             flex-direction: column;
             padding: 20px;
-            background: url('hero-placeholder.jpg') center/cover fixed;
+            background: url('hero-placeholder.jpg') center/cover;
             animation: fadeInUp 1.2s ease forwards;
         }
 
@@ -149,6 +149,47 @@
             background: #ffc107;
             transform: translateY(-3px);
         }
+
+        #particles {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            to {
+                transform: translateY(-120px) translateX(40px);
+                opacity: 0.6;
+            }
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
 
         /* Section */
         .section {
@@ -194,6 +235,114 @@
             transform: scale(1.06);
         }
 
+        .view-more-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .view-more-btn {
+            background: #ffdd57;
+            color: #121212;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .view-more-btn:hover {
+            background: #ffc107;
+            transform: translateY(-3px);
+        }
+
+        /* Store */
+        .store-title {
+            font-size: 38px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffdd57;
+        }
+
+        .store-desc {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #dddddd;
+        }
+
+        .store-desc span {
+            color: #ffdd57;
+            font-weight: 600;
+        }
+
+        /* Cards layout */
+        .store-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 10px;
+        }
+
+        /* Aesthetic card design */
+        .store-card {
+            background: #181818;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            transition: all 0.35s ease;
+        }
+
+        .store-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 25px rgba(0,0,0,0.4);
+            border-color: rgba(255, 221, 87, 0.3);
+        }
+
+        /* Card text */
+        .store-card h3 {
+            font-size: 22px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .store-card p {
+            font-size: 15.5px;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* CTA Button */
+        .store-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .store-btn {
+            background: #ffdd57;
+            color: #121212;
+            padding: 12px 34px;
+            font-size: 17px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 0.6px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .store-btn:hover {
+            background: #ffc107;
+            transform: translateY(-4px);
+        }
+
         /* Footer */
         .footer {
             padding: 20px;
@@ -223,6 +372,71 @@
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
         }
+
+        /* AESTHETIC ABOUT SECTION   */
+
+        .about-title {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffdd57;
+        }
+
+        .about-desc {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #dddddd;
+            margin-bottom: 50px;
+        }
+
+        .about-desc span {
+            color: #ffdd57;
+            font-weight: 600;
+        }
+
+        /* Highlighted info cards */
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .about-card {
+            background: #181818;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            transition: all 0.35s ease;
+            text-align: center;
+        }
+
+        .about-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 25px rgba(0,0,0,0.4);
+            border-color: rgba(255, 221, 87, 0.3);
+        }
+
+        .about-card h3 {
+            color: #ffdd57;
+            font-size: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-card p {
+            font-size: 15.5px;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
     </style>
 
     <script>
@@ -230,6 +444,21 @@
         function toggleMenu() {
             const menu = document.querySelector(".mobile-menu");
             menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+        const particleContainer = document.getElementById("particles");
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("particle");
+
+            // random positions
+            particle.style.top = Math.random() * 100 + "%";
+            particle.style.left = Math.random() * 100 + "%";
+
+            // random animation duration & size for variation
+            particle.style.width = particle.style.height = Math.random() * 3 + 2 + "px";
+            particle.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+            particleContainer.appendChild(particle);
         }
     </script>
 </head>
@@ -264,27 +493,49 @@
     </div>
 
     <!-- Hero -->
-    <section id="home" class="hero fade-in">
+    <section id="home" class="hero">
+    <div id="particles"></div>
+    
+    <div class="hero-content">
         <h1>Welcome to Factsnreel</h1>
         <p>Daily fascinating facts, science insights, and self-growth inspiration.</p>
-
+        <br><br>
         <button onclick="location.href='https://www.instagram.com/factsnreel';">
-            Instagram Account
+            instagram account
         </button>
+    </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="section fade-in">
-        <h2>About Us</h2>
-        <p style="max-width: 800px; margin: auto; text-align: center;">
-            At FactsnReel, we bring you a daily dose of fascinating facts and engaging reels designed to spark curiosity and keep you entertained.
-            <br><br>
-            🌟 Eye-opening facts <br>
-            🎥 Creative and captivating reels <br>
-            🤓 Making learning fun
-            <br><br>
-            Join our community and explore one fact at a time.
-        </p>
+    <section id="about" class="section animate">
+    <h2 class="about-title">About Us</h2>
+
+    <p class="about-desc">
+        At <span>FactsnReel</span>, we bring you daily content that sparks curiosity, 
+        inspires learning, and keeps your mind engaged.  
+        <br><br>
+        From fascinating facts and science insights to psychology bites and growth ideas —
+        every reel and post is crafted to make learning simple, fun, and meaningful.
+        <br><br>
+        Join thousands of curious minds who explore the world one fact at a time.
+    </p>
+
+    <div class="about-stats">
+        <div class="about-card">
+            <h3>📌 Daily Facts</h3>
+            <p>Fresh, engaging knowledge delivered every day.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🎥 Creative Reels</h3>
+            <p>Visually appealing reels designed to educate & entertain.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🧠 Smart Content</h3>
+            <p>Science, psychology, and thought-provoking insights.</p>
+        </div>
+    </div>
     </section>
 
     <!-- Posts -->
@@ -304,6 +555,52 @@
                 <p>Emotions play a critical role in our decision-making processes.</p>
             </div>
         </div>
+        <div class="view-more-container">
+        <button class="view-more-btn" onclick="location.href='postpage.html'">
+            View All Posts
+        </button>
+        </div>
+    </section>
+
+    <!-- Store -->
+     <section id="store" class="section animate">
+    <h2 class="store-title">Our Store</h2>
+
+    <p class="store-desc">
+        Explore a curated range of <span>gifting items</span>, <span>books</span>, 
+        <span>business books</span>, and innovative <span>tech products</span> — all selected 
+        to fuel curiosity, learning, and personal growth.  
+        <br><br>
+        Quality items, thoughtful picks, and products that inspire.
+    </p>
+
+    <div class="store-grid">
+        <div class="store-card">
+            <h3>🎁 Gifting Items</h3>
+            <p>Thoughtfully picked items perfect for surprising, celebrating and inspiring.</p>
+        </div>
+
+        <div class="store-card">
+            <h3>📚 Books</h3>
+            <p>A handpicked collection of books that expand horizons and spark curiosity.</p>
+        </div>
+
+        <div class="store-card">
+            <h3>📘 Business Books</h3>
+            <p>Top reads for entrepreneurship, mindset, leadership and career growth.</p>
+        </div>
+
+        <div class="store-card">
+            <h3>💻 Tech Products</h3>
+            <p>Useful tech accessories, gadgets and tools for modern productivity.</p>
+        </div>
+    </div>
+
+    <div class="store-btn-container">
+        <button class="store-btn" onclick="location.href='store.html'">
+            Visit Full Store
+        </button>
+    </div>
     </section>
 
     <!-- Contact -->
